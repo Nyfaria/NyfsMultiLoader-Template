@@ -1,4 +1,4 @@
-package com.example.examplemod;
+package com.nyfaria.nyfsmultiloader;
 
 import net.minecraftforge.fml.common.Mod;
 

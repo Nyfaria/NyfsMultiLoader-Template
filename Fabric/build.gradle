@@ -31,15 +31,43 @@ loom {
         }
     }
 }
-
+def resourceTargets = ['META-INF/mods.toml', 'pack.mcmeta', "${mod_id}.mixins.json".toString(),'fabric.mod.json']
+def intoTargets = ["$rootDir/out/production/resources/", "$rootDir/out/production/${project.name}.main/", "$rootDir/bin/main/"]
+def replaceProperties =
+        [
+                mod_id: mod_id,
+                mod_name: mod_name,
+                mod_version: version,
+                mod_authors: mod_author,
+                mod_description: mod_description,
+                minecraft_version_range: minecraft_version_range,
+                forge_version_range: forge_version_range,
+                loader_version_range: loader_version_range,
+                fabric_loader_version_range: fabric_loader_version_range,
+                minecraft_version: minecraft_version
+        ]
 
 processResources {
     from project(":Common").sourceSets.main.resources
-    inputs.property "version", project.version
+    inputs.properties replaceProperties
+    replaceProperties.put 'project', project
 
-    filesMatching("fabric.mod.json") {
-        expand "version": project.version
+    filesMatching(resourceTargets) {
+        expand replaceProperties
     }
+
+    intoTargets.each { target ->
+        if (file(target).exists()) {
+            copy {
+                from(sourceSets.main.resources) {
+                    include resourceTargets
+                    expand replaceProperties
+                }
+                into target
+            }
+        }
+    }
+
 }
 
 tasks.withType(JavaCompile) {

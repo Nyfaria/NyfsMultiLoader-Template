@@ -1,4 +1,4 @@
-package com.example.examplemod;
+package com.nyfaria.nyfsmultiloader;
 
 import net.fabricmc.api.ModInitializer;
 

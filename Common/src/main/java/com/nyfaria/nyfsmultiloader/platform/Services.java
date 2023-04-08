@@ -1,7 +1,7 @@
-package com.example.examplemod.platform;
+package com.nyfaria.nyfsmultiloader.platform;
 
-import com.example.examplemod.Constants;
-import com.example.examplemod.platform.services.IPlatformHelper;
+import com.nyfaria.nyfsmultiloader.Constants;
+import com.nyfaria.nyfsmultiloader.platform.services.IPlatformHelper;
 
 import java.util.ServiceLoader;
 
