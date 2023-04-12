@@ -13,6 +13,9 @@
   "entrypoints": {
     "main": [
       "com.nyfaria.nyfsmultiloader.ExampleMod"
+    ],
+    "client": [
+      "com.nyfaria.nyfsmultiloader.ExampleModClient"
     ]
   },
   "mixins": [
