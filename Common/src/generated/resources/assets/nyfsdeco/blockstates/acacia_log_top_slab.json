@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "nyfsdeco:block/acacia_log_top_slab"
+    },
+    "type=double": {
+      "model": "nyfsdeco:block/acacia_log_top_slab_double"
+    },
+    "type=top": {
+      "model": "nyfsdeco:block/acacia_log_top_slab_top"
+    }
+  }
+}

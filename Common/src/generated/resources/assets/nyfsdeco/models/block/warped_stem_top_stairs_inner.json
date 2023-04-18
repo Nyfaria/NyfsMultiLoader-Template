@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "bottom": "minecraft:block/warped_stem_top",
+    "side": "minecraft:block/warped_stem_top",
+    "top": "minecraft:block/warped_stem_top"
+  }
+}

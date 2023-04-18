@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 3,
+  "ingredient": {
+    "item": "minecraft:yellow_terracotta"
+  },
+  "result": "nyfsdeco:yellow_terracotta_carpet"
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "minecraft:red_mushroom_block"
+  },
+  "result": "nyfsdeco:red_mushroom_block_stairs"
+}

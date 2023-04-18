@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_fence_gate",
+  "render_type": "minecraft:translucent",
+  "textures": {
+    "texture": "minecraft:block/magenta_stained_glass"
+  }
+}

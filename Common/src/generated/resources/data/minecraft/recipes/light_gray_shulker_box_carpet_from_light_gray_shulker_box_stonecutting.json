@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 3,
+  "ingredient": {
+    "item": "minecraft:light_gray_shulker_box"
+  },
+  "result": "nyfsdeco:light_gray_shulker_box_carpet"
+}

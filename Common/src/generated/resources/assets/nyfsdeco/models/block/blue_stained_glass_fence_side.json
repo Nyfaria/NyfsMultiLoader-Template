@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/fence_side",
+  "render_type": "minecraft:translucent",
+  "textures": {
+    "texture": "minecraft:block/blue_stained_glass"
+  }
+}

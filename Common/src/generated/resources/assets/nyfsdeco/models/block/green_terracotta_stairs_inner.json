@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "bottom": "minecraft:block/green_terracotta",
+    "side": "minecraft:block/green_terracotta",
+    "top": "minecraft:block/green_terracotta"
+  }
+}

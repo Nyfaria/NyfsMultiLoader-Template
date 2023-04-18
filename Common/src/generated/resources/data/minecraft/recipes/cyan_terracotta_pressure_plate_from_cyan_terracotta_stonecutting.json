@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 3,
+  "ingredient": {
+    "item": "minecraft:cyan_terracotta"
+  },
+  "result": "nyfsdeco:cyan_terracotta_pressure_plate"
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 3,
+  "ingredient": {
+    "item": "minecraft:red_terracotta"
+  },
+  "result": "nyfsdeco:red_terracotta_trapdoor"
+}

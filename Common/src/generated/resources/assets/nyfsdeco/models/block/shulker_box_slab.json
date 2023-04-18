@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/slab",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "bottom": "minecraft:block/shulker_box",
+    "side": "minecraft:block/shulker_box",
+    "top": "minecraft:block/shulker_box"
+  }
+}

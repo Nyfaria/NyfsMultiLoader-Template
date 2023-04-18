@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/carpet",
+  "render_type": "minecraft:translucent",
+  "textures": {
+    "wool": "minecraft:block/purple_stained_glass"
+  }
+}

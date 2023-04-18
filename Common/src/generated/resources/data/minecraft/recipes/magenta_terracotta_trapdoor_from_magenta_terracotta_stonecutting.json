@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 3,
+  "ingredient": {
+    "item": "minecraft:magenta_terracotta"
+  },
+  "result": "nyfsdeco:magenta_terracotta_trapdoor"
+}

@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/stairs",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "bottom": "minecraft:block/pink_terracotta",
+    "side": "minecraft:block/pink_terracotta",
+    "top": "minecraft:block/pink_terracotta"
+  }
+}

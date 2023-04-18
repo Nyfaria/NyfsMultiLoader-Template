@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/stairs",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "bottom": "minecraft:block/white_concrete",
+    "side": "minecraft:block/white_concrete",
+    "top": "minecraft:block/white_concrete"
+  }
+}

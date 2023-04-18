@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "nyfsdeco:block/gray_shulker_box_slab"
+    },
+    "type=double": {
+      "model": "nyfsdeco:block/gray_shulker_box_slab_double"
+    },
+    "type=top": {
+      "model": "nyfsdeco:block/gray_shulker_box_slab_top"
+    }
+  }
+}

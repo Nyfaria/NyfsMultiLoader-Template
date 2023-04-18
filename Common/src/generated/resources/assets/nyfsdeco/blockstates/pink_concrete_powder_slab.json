@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "nyfsdeco:block/pink_concrete_powder_slab"
+    },
+    "type=double": {
+      "model": "nyfsdeco:block/pink_concrete_powder_slab_double"
+    },
+    "type=top": {
+      "model": "nyfsdeco:block/pink_concrete_powder_slab_top"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "minecraft:spruce_log"
+  },
+  "result": "nyfsdeco:spruce_log_top"
+}

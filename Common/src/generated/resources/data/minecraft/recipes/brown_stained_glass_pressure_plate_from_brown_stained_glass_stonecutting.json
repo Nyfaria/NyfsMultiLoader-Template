@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 3,
+  "ingredient": {
+    "item": "minecraft:brown_stained_glass"
+  },
+  "result": "nyfsdeco:brown_stained_glass_pressure_plate"
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "minecraft:furnace"
+  },
+  "result": "nyfsdeco:furnace_top_stairs"
+}

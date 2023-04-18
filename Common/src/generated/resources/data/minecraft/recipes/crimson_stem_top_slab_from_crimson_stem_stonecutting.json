@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "minecraft:crimson_stem"
+  },
+  "result": "nyfsdeco:crimson_stem_top_slab"
+}

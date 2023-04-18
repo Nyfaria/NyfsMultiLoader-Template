@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "bottom": "minecraft:block/lime_concrete_powder",
+    "side": "minecraft:block/lime_concrete_powder",
+    "top": "minecraft:block/lime_concrete_powder"
+  }
+}

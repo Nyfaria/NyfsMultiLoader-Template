@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/button",
+  "render_type": "minecraft:translucent",
+  "textures": {
+    "texture": "minecraft:block/pink_stained_glass"
+  }
+}

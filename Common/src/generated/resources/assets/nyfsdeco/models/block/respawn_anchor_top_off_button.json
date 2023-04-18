@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/button",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "texture": "minecraft:block/respawn_anchor_top_off"
+  }
+}

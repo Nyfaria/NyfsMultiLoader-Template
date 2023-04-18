@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "minecraft:lime_concrete_powder"
+  },
+  "result": "nyfsdeco:lime_concrete_powder_stairs"
+}

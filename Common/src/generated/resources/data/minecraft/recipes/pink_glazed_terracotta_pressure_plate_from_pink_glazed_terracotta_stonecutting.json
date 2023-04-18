@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 3,
+  "ingredient": {
+    "item": "minecraft:pink_glazed_terracotta"
+  },
+  "result": "nyfsdeco:pink_glazed_terracotta_pressure_plate"
+}

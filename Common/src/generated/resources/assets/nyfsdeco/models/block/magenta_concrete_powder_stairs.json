@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/stairs",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "bottom": "minecraft:block/magenta_concrete_powder",
+    "side": "minecraft:block/magenta_concrete_powder",
+    "top": "minecraft:block/magenta_concrete_powder"
+  }
+}

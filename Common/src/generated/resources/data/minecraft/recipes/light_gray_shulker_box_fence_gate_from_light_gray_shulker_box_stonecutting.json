@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "minecraft:light_gray_shulker_box"
+  },
+  "result": "nyfsdeco:light_gray_shulker_box_fence_gate"
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "nyfsdeco:block/crimson_stem_top_pressure_plate"
+    },
+    "powered=true": {
+      "model": "nyfsdeco:block/crimson_stem_top_pressure_plate_down"
+    }
+  }
+}

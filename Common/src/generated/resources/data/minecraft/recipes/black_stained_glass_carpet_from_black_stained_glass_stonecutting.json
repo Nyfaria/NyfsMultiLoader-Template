@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 3,
+  "ingredient": {
+    "item": "minecraft:black_stained_glass"
+  },
+  "result": "nyfsdeco:black_stained_glass_carpet"
+}

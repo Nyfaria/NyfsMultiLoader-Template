@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "nyfsdeco:block/white_concrete_slab"
+    },
+    "type=double": {
+      "model": "nyfsdeco:block/white_concrete_slab_double"
+    },
+    "type=top": {
+      "model": "nyfsdeco:block/white_concrete_slab_top"
+    }
+  }
+}

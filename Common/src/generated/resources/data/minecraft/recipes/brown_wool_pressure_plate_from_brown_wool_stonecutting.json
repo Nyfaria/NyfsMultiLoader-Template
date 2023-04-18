@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 3,
+  "ingredient": {
+    "item": "minecraft:brown_wool"
+  },
+  "result": "nyfsdeco:brown_wool_pressure_plate"
+}

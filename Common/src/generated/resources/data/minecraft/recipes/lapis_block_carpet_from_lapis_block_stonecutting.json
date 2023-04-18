@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 3,
+  "ingredient": {
+    "item": "minecraft:lapis_block"
+  },
+  "result": "nyfsdeco:lapis_block_carpet"
+}

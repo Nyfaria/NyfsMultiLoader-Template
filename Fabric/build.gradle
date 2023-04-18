@@ -19,6 +19,8 @@ dependencies {
 }
 
 loom {
+
+    accessWidenerPath  = project(":Common").file("src/main/resources/nyfsdeco.accesswidener")
     runs {
         client {
             client()

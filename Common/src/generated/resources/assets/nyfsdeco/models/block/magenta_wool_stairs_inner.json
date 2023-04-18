@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "bottom": "minecraft:block/magenta_wool",
+    "side": "minecraft:block/magenta_wool",
+    "top": "minecraft:block/magenta_wool"
+  }
+}

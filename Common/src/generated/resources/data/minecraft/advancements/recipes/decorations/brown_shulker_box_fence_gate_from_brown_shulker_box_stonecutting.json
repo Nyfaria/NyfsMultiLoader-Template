@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_brown_shulker_box": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:brown_shulker_box"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:brown_shulker_box_fence_gate_from_brown_shulker_box_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_brown_shulker_box",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:brown_shulker_box_fence_gate_from_brown_shulker_box_stonecutting"
+    ]
+  }
+}

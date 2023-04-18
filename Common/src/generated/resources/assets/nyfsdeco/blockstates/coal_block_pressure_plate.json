@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "nyfsdeco:block/coal_block_pressure_plate"
+    },
+    "powered=true": {
+      "model": "nyfsdeco:block/coal_block_pressure_plate_down"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 3,
+  "ingredient": {
+    "item": "minecraft:tinted_glass"
+  },
+  "result": "nyfsdeco:tinted_glass_pressure_plate"
+}

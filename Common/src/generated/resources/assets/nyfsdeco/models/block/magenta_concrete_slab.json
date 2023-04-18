@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/slab",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "bottom": "minecraft:block/magenta_concrete",
+    "side": "minecraft:block/magenta_concrete",
+    "top": "minecraft:block/magenta_concrete"
+  }
+}

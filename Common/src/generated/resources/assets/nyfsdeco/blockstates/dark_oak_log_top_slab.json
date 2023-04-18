@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "nyfsdeco:block/dark_oak_log_top_slab"
+    },
+    "type=double": {
+      "model": "nyfsdeco:block/dark_oak_log_top_slab_double"
+    },
+    "type=top": {
+      "model": "nyfsdeco:block/dark_oak_log_top_slab_top"
+    }
+  }
+}
