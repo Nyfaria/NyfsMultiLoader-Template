@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/template_fence_gate_wall",
-  "render_type": "minecraft:cutout",
-  "textures": {
-    "texture": "minecraft:block/green_concrete"
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 3,
-  "ingredient": {
-    "item": "minecraft:lime_wool"
-  },
-  "result": "nyfsdeco:lime_wool_pressure_plate"
-}

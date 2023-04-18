@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 2,
-  "ingredient": {
-    "item": "minecraft:black_glazed_terracotta"
-  },
-  "result": "nyfsdeco:black_glazed_terracotta_slab"
-}

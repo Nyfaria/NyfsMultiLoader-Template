@@ -1,9 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "render_type": "minecraft:cutout",
-  "textures": {
-    "bottom": "minecraft:block/brown_wool",
-    "side": "minecraft:block/brown_wool",
-    "top": "minecraft:block/brown_wool"
-  }
-}

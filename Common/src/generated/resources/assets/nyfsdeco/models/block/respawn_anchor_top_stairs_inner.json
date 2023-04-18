@@ -1,9 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "render_type": "minecraft:cutout",
-  "textures": {
-    "bottom": "minecraft:block/respawn_anchor_top",
-    "side": "minecraft:block/respawn_anchor_top",
-    "top": "minecraft:block/respawn_anchor_top"
-  }
-}

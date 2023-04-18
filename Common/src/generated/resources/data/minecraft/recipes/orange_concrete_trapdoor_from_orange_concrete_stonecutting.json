@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 3,
-  "ingredient": {
-    "item": "minecraft:orange_concrete"
-  },
-  "result": "nyfsdeco:orange_concrete_trapdoor"
-}

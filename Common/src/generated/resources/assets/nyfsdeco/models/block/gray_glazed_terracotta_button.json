@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/button",
-  "render_type": "minecraft:cutout",
-  "textures": {
-    "texture": "minecraft:block/gray_glazed_terracotta"
-  }
-}

@@ -1,9 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "render_type": "minecraft:cutout",
-  "textures": {
-    "bottom": "minecraft:block/mangrove_log_top",
-    "side": "minecraft:block/mangrove_log_top",
-    "top": "minecraft:block/mangrove_log_top"
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 3,
-  "ingredient": {
-    "item": "minecraft:emerald_block"
-  },
-  "result": "nyfsdeco:emerald_block_carpet"
-}

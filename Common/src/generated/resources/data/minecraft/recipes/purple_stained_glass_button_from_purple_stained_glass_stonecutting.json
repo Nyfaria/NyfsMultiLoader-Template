@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "minecraft:purple_stained_glass"
-  },
-  "result": "nyfsdeco:purple_stained_glass_button"
-}

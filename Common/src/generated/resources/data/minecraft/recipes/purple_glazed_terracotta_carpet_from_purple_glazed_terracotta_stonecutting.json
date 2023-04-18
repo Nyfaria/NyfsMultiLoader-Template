@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 3,
-  "ingredient": {
-    "item": "minecraft:purple_glazed_terracotta"
-  },
-  "result": "nyfsdeco:purple_glazed_terracotta_carpet"
-}

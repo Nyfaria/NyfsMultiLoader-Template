@@ -1,9 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "render_type": "minecraft:cutout",
-  "textures": {
-    "bottom": "minecraft:block/red_concrete_powder",
-    "side": "minecraft:block/red_concrete_powder",
-    "top": "minecraft:block/red_concrete_powder"
-  }
-}

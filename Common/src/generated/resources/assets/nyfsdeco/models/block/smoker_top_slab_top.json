@@ -1,9 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "render_type": "minecraft:cutout",
-  "textures": {
-    "bottom": "minecraft:block/smoker_top",
-    "side": "minecraft:block/smoker_top",
-    "top": "minecraft:block/smoker_top"
-  }
-}

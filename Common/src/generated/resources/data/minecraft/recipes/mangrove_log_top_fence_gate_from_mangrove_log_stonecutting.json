@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 2,
-  "ingredient": {
-    "item": "minecraft:mangrove_log"
-  },
-  "result": "nyfsdeco:mangrove_log_top_fence_gate"
-}

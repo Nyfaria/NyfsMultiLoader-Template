@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 2,
-  "ingredient": {
-    "item": "minecraft:jungle_log"
-  },
-  "result": "nyfsdeco:jungle_log_top_fence_gate"
-}

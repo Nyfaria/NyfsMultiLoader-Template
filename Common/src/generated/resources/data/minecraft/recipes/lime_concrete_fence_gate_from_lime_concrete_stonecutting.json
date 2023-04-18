@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 2,
-  "ingredient": {
-    "item": "minecraft:lime_concrete"
-  },
-  "result": "nyfsdeco:lime_concrete_fence_gate"
-}

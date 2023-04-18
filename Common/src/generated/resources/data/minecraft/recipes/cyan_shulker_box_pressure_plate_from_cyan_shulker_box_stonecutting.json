@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 3,
-  "ingredient": {
-    "item": "minecraft:cyan_shulker_box"
-  },
-  "result": "nyfsdeco:cyan_shulker_box_pressure_plate"
-}

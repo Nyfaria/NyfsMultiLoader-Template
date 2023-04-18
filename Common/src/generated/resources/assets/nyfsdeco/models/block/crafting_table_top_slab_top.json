@@ -1,9 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "render_type": "minecraft:cutout",
-  "textures": {
-    "bottom": "minecraft:block/crafting_table_top",
-    "side": "minecraft:block/crafting_table_top",
-    "top": "minecraft:block/crafting_table_top"
-  }
-}

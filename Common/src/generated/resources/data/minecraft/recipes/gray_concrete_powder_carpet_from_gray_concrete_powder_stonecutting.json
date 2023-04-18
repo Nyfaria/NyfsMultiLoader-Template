@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 3,
-  "ingredient": {
-    "item": "minecraft:gray_concrete_powder"
-  },
-  "result": "nyfsdeco:gray_concrete_powder_carpet"
-}

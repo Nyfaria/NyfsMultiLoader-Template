@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 2,
-  "ingredient": {
-    "item": "minecraft:red_mushroom_block"
-  },
-  "result": "nyfsdeco:red_mushroom_block_fence_gate"
-}

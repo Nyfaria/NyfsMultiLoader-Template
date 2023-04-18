@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 2,
-  "ingredient": {
-    "item": "minecraft:blue_wool"
-  },
-  "result": "nyfsdeco:blue_wool_fence"
-}

@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "minecraft:smoker"
-  },
-  "result": "nyfsdeco:smoker_top"
-}

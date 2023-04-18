@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "minecraft:shulker_box"
-  },
-  "result": "nyfsdeco:shulker_box"
-}

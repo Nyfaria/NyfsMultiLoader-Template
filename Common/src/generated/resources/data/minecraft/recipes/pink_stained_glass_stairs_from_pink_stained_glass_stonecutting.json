@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "minecraft:pink_stained_glass"
-  },
-  "result": "nyfsdeco:pink_stained_glass_stairs"
-}

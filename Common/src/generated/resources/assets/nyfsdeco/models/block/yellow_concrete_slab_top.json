@@ -1,9 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "render_type": "minecraft:cutout",
-  "textures": {
-    "bottom": "minecraft:block/yellow_concrete",
-    "side": "minecraft:block/yellow_concrete",
-    "top": "minecraft:block/yellow_concrete"
-  }
-}

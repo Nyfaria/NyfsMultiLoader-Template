@@ -1,9 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "render_type": "minecraft:cutout",
-  "textures": {
-    "bottom": "minecraft:block/respawn_anchor_top_off",
-    "side": "minecraft:block/respawn_anchor_top_off",
-    "top": "minecraft:block/respawn_anchor_top_off"
-  }
-}

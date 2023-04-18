@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 3,
-  "ingredient": {
-    "item": "minecraft:birch_log"
-  },
-  "result": "nyfsdeco:birch_log_top_carpet"
-}

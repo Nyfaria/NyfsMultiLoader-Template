@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 3,
-  "ingredient": {
-    "item": "minecraft:cyan_concrete_powder"
-  },
-  "result": "nyfsdeco:cyan_concrete_powder_trapdoor"
-}

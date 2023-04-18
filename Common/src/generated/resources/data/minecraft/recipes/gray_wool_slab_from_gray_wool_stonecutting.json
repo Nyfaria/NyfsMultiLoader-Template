@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 2,
-  "ingredient": {
-    "item": "minecraft:gray_wool"
-  },
-  "result": "nyfsdeco:gray_wool_slab"
-}

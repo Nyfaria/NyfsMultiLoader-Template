@@ -1,9 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "render_type": "minecraft:cutout",
-  "textures": {
-    "bottom": "minecraft:block/purple_wool",
-    "side": "minecraft:block/purple_wool",
-    "top": "minecraft:block/purple_wool"
-  }
-}

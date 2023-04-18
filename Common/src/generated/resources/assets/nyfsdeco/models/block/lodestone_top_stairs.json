@@ -1,9 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "render_type": "minecraft:cutout",
-  "textures": {
-    "bottom": "minecraft:block/lodestone_top",
-    "side": "minecraft:block/lodestone_top",
-    "top": "minecraft:block/lodestone_top"
-  }
-}

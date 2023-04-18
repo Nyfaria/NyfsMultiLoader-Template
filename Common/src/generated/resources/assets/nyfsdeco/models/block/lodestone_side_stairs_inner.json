@@ -1,9 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "render_type": "minecraft:cutout",
-  "textures": {
-    "bottom": "minecraft:block/lodestone_side",
-    "side": "minecraft:block/lodestone_side",
-    "top": "minecraft:block/lodestone_side"
-  }
-}

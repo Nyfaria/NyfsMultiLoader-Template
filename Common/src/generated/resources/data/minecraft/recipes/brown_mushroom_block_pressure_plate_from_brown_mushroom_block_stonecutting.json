@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 3,
-  "ingredient": {
-    "item": "minecraft:brown_mushroom_block"
-  },
-  "result": "nyfsdeco:brown_mushroom_block_pressure_plate"
-}

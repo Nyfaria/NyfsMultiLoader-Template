@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 3,
-  "ingredient": {
-    "item": "minecraft:warped_stem"
-  },
-  "result": "nyfsdeco:warped_stem_top_carpet"
-}

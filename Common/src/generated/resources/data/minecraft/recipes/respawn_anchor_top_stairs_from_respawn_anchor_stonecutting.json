@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "minecraft:respawn_anchor"
-  },
-  "result": "nyfsdeco:respawn_anchor_top_stairs"
-}

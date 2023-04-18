@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 2,
-  "ingredient": {
-    "item": "minecraft:light_blue_concrete_powder"
-  },
-  "result": "nyfsdeco:light_blue_concrete_powder_fence"
-}

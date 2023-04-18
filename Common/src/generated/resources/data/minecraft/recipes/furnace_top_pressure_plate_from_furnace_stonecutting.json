@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 3,
-  "ingredient": {
-    "item": "minecraft:furnace"
-  },
-  "result": "nyfsdeco:furnace_top_pressure_plate"
-}

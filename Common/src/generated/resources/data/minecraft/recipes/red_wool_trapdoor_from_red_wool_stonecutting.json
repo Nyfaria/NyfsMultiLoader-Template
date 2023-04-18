@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 3,
-  "ingredient": {
-    "item": "minecraft:red_wool"
-  },
-  "result": "nyfsdeco:red_wool_trapdoor"
-}

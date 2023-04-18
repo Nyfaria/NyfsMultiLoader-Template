@@ -1,8 +1,0 @@
-// 1.19.3	2023-04-16T21:50:27.6580225	Tags for minecraft:block mod id nyfsdeco
-35d212629987adcf01c669b69d5d5e6e3650a119 data/minecraft/tags/blocks/fences.json
-fe81d56fe715b58d651a672b047edf6e30b4fd94 data/minecraft/tags/blocks/fence_gates.json
-06a056ddb471941f45b1fede7da5ab0dfda8ef27 data/minecraft/tags/blocks/pressure_plates.json
-079a3446d683d44d199407d4175d1632e44ba674 data/minecraft/tags/blocks/slabs.json
-659e2976050839029ca3d91354937119ee443e00 data/minecraft/tags/blocks/stairs.json
-5dc5ec1684abf205947c859ef34b7ea7a16efbf3 data/minecraft/tags/blocks/walls.json
-55d94e39536465b7f23e1e48d6bdf9ece3d555bb data/minecraft/tags/blocks/wool_carpets.json

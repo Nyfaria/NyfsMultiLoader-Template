@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 3,
-  "ingredient": {
-    "item": "minecraft:dark_oak_log"
-  },
-  "result": "nyfsdeco:dark_oak_log_top_carpet"
-}

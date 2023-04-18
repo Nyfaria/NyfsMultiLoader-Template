@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/button",
-  "render_type": "minecraft:cutout",
-  "textures": {
-    "texture": "minecraft:block/warped_stem_top"
-  }
-}
