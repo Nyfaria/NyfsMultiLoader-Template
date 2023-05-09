@@ -4,6 +4,7 @@ plugins {
     id 'maven-publish'
     id 'net.minecraftforge.gradle' version '5.1.+'
     id 'org.parchmentmc.librarian.forgegradle' version '1.+'
+    id 'org.spongepowered.mixin' version '0.7.+'
 }
 
 archivesBaseName = "${mod_id}-forge-${minecraft_version}"
@@ -65,10 +66,19 @@ minecraft {
 }
 
 sourceSets.main.resources.srcDir 'src/generated/resources'
+mixin {
+    add sourceSets.main, "${mod_id}.refmap.json"
 
+    // Sets up the mixin config; this gets added to run configurations and the manifest in the final jar
+    config "${mod_id}.mixins.json"
+
+    // Enables exporting mixin-changed classes to .mixin.out in the run folder
+    debug.export = true
+}
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
     compileOnly project(":Common")
+    annotationProcessor "org.spongepowered:mixin:${mixin_version}:processor"
 }
 
 tasks.withType(JavaCompile) {
