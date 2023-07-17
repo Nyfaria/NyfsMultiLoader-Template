@@ -6,7 +6,7 @@ import com.nyfaria.nyfsmultiloader.Constants;
 import com.nyfaria.nyfsmultiloader.init.BlockInit;
 import com.nyfaria.nyfsmultiloader.init.EntityInit;
 import com.nyfaria.nyfsmultiloader.init.ItemInit;
-import net.minecraft.data.PackOutput;
+import net.minecraft.data.DataGenerator;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -25,7 +25,7 @@ public class ModLangProvider extends LanguageProvider {
             "sus", ""
     );
 
-    public ModLangProvider(PackOutput gen) {
+    public ModLangProvider(DataGenerator gen) {
         super(gen, Constants.MODID, "en_us");
     }
 

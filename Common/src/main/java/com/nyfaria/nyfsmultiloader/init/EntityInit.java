@@ -3,7 +3,7 @@ package com.nyfaria.nyfsmultiloader.init;
 import com.nyfaria.grinnersents.registration.RegistrationProvider;
 import com.nyfaria.grinnersents.registration.RegistryObject;
 import com.nyfaria.nyfsmultiloader.Constants;
-import net.minecraft.core.registries.Registries;
+import net.minecraft.core.Registry;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.function.Supplier;
 
 public class EntityInit {
-    public static final RegistrationProvider<EntityType<?>> ENTITIES = RegistrationProvider.get(Registries.ENTITY_TYPE, Constants.MODID);
+    public static final RegistrationProvider<EntityType<?>> ENTITIES = RegistrationProvider.get(Registry.ENTITY_TYPE, Constants.MODID);
     public static final List<AttributesRegister<?>> attributeSuppliers = new ArrayList<>();
 
     private static <T extends Entity> RegistryObject<EntityType<T>> registerEntity(String name, Supplier<EntityType.Builder<T>> supplier) {

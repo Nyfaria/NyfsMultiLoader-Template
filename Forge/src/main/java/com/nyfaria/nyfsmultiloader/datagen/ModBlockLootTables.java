@@ -2,21 +2,16 @@ package com.nyfaria.nyfsmultiloader.datagen;
 
 import com.nyfaria.grinnersents.registration.RegistryObject;
 import com.nyfaria.nyfsmultiloader.init.BlockInit;
-import net.minecraft.data.loot.BlockLootSubProvider;
-import net.minecraft.world.flag.FeatureFlags;
+import net.minecraft.data.loot.BlockLoot;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DropExperienceBlock;
 
-import java.util.Set;
 import java.util.stream.Stream;
 
-public class ModBlockLootTables extends BlockLootSubProvider {
-    protected ModBlockLootTables() {
-        super(Set.of(), FeatureFlags.REGISTRY.allFlags());
-    }
+public class ModBlockLootTables extends BlockLoot {
     @Override
-    protected void generate() {
+    protected void addTables() {
         this.getBlockStream().filter(this::shouldDropSelf).forEach(this::dropSelf);
     }
 

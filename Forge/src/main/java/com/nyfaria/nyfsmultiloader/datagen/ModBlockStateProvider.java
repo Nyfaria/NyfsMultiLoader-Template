@@ -1,7 +1,7 @@
 package com.nyfaria.nyfsmultiloader.datagen;
 
 import com.nyfaria.nyfsmultiloader.Constants;
-import net.minecraft.data.PackOutput;
+import net.minecraft.data.DataGenerator;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.BlockModelBuilder;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
@@ -9,7 +9,7 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class ModBlockStateProvider extends BlockStateProvider {
-    public ModBlockStateProvider(PackOutput generator, ExistingFileHelper existingFileHelper) {
+    public ModBlockStateProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
         super(generator, Constants.MODID, existingFileHelper);
     }
 

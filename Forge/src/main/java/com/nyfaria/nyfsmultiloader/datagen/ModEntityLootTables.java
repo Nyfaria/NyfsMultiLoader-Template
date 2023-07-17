@@ -1,8 +1,7 @@
 package com.nyfaria.nyfsmultiloader.datagen;
 
-import net.minecraft.data.loot.EntityLootSubProvider;
+import net.minecraft.data.loot.EntityLoot;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.LootPool;
@@ -14,15 +13,10 @@ import net.minecraft.world.level.storage.loot.providers.number.NumberProvider;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
 import java.util.List;
-import java.util.stream.Stream;
 
-public class ModEntityLootTables extends EntityLootSubProvider {
-    protected ModEntityLootTables() {
-        super(FeatureFlags.REGISTRY.allFlags());
-    }
-
+public class ModEntityLootTables extends EntityLoot {
     @Override
-    public void generate() {
+    protected void addTables() {
     }
 
     private void multiDrops(EntityType<?> type, LootEntry... entries) {
@@ -57,8 +51,8 @@ public class ModEntityLootTables extends EntityLootSubProvider {
     }
 
     @Override
-    protected Stream<EntityType<?>> getKnownEntityTypes() {
-        return List.<EntityType<?>>of().stream();
+    protected Iterable<EntityType<?>> getKnownEntities() {
+        return List.of();
     }
 
     record LootEntry(Item item, NumberProvider numberProvider) {}
