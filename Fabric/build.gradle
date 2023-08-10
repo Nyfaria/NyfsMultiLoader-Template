@@ -105,7 +105,7 @@ publishMods {
     file = remapJar.archiveFile
     changelog = project(":Common").file("changelog.md").text
     type = STABLE
-    modLoaders.add("forge")
+    modLoaders.add("fabric")
     displayName = "${mod_id}-${minecraft_version}-forge-${project.property('version')}"
     if (curseforge_publishing_enabled.toBoolean()) {
         curseforge {
