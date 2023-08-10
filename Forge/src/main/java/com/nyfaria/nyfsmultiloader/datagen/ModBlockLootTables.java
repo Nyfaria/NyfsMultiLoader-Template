@@ -1,6 +1,6 @@
 package com.nyfaria.nyfsmultiloader.datagen;
 
-import com.nyfaria.grinnersents.registration.RegistryObject;
+import com.nyfaria.nyfsmultiloader.registration.RegistryObject;
 import com.nyfaria.nyfsmultiloader.init.BlockInit;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;

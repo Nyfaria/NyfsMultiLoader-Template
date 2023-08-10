@@ -1,6 +1,6 @@
 package com.nyfaria.nyfsmultiloader.init;
 
-import com.nyfaria.grinnersents.registration.RegistrationProvider;
+import com.nyfaria.nyfsmultiloader.registration.RegistrationProvider;
 import com.nyfaria.nyfsmultiloader.Constants;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.Block;

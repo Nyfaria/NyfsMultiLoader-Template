@@ -1,7 +1,7 @@
 package com.nyfaria.nyfsmultiloader.datagen;
 
 import com.google.common.collect.ImmutableMap;
-import com.nyfaria.grinnersents.registration.RegistryObject;
+import com.nyfaria.nyfsmultiloader.registration.RegistryObject;
 import com.nyfaria.nyfsmultiloader.Constants;
 import com.nyfaria.nyfsmultiloader.init.BlockInit;
 import com.nyfaria.nyfsmultiloader.init.EntityInit;
@@ -34,6 +34,7 @@ public class ModLangProvider extends LanguageProvider {
         ItemInit.ITEMS.getEntries().forEach(this::itemLang);
         EntityInit.ENTITIES.getEntries().forEach(this::entityLang);
         BlockInit.BLOCKS.getEntries().forEach(this::blockLang);
+        add("itemGroup." + Constants.MODID, Constants.MOD_NAME);
     }
 
     protected void itemLang(RegistryObject<Item> entry) {
