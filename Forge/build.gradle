@@ -138,12 +138,12 @@ publishing {
     }
 }
 publishMods {
-    if(publishFabric) {
-        file = remapJar.archiveFile
+    if(publishForge) {
+        file = jar.archiveFile
         changelog = project(":Common").file("changelog.md").text
         type = STABLE
-        modLoaders.add("fabric")
-        displayName = "${mod_name}-${minecraft_version}-[Fabric]-${project.version}"
+        modLoaders.add("forge")
+        displayName = "${mod_name}-${minecraft_version}-[Forge]-${project.version}"
         dryRun = dry_run.toBoolean()
         if (curseforge_publishing_enabled.toBoolean()) {
             curseforge {
