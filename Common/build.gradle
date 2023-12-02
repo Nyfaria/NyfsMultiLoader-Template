@@ -27,6 +27,8 @@ minecraft {
 dependencies {
     compileOnly group:'org.spongepowered', name:'mixin', version:'0.8.5'
     implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.1'
+    implementation("com.github.llamalad7.mixinextras:mixinextras-common:0.2.0-rc.3")
+    annotationProcessor("com.github.llamalad7.mixinextras:mixinextras-common:0.2.0-rc.3")
 }
 sourceSets.main.resources.srcDir './src/generated/resources'
 processResources {
