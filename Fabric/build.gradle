@@ -22,8 +22,8 @@ dependencies {
 
 loom {
 
-    if (project.hasProperty('common_aws_enabled') && project.findProperty('fabric_aws_enabled').toBoolean()) {
-        accessWidenerPath = project(":Common").file("src/main/resources/mhef.accesswidener")
+    if (project.hasProperty('fabric_aws_enabled') && project.findProperty('fabric_aws_enabled').toBoolean()) {
+        accessWidenerPath = project(":Common").file("src/main/resources/${mod_id}.accesswidener")
     }
     runs {
         client {

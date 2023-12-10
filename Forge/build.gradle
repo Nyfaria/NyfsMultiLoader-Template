@@ -125,7 +125,6 @@ processResources {
 
 
 jar.finalizedBy('reobfJar')
-
 publishing {
     publications {
         mavenJava(MavenPublication) {
@@ -141,6 +140,7 @@ publishing {
         }
     }
 }
+reg.configureJarTask(tasks.jarJar)
 publishMods {
     if(publishForge) {
         file = jar.archiveFile
