@@ -20,7 +20,7 @@ minecraft {
         }
     }
     if (project.hasProperty('common_aws_enabled') && project.findProperty('common_aws_enabled').toBoolean()) {
-        accessWideners(project(":Common").file("src/main/resources/${mod_id}.accesswidener"))
+        accessWideners(project(":Common").file("src/main/resources/accesstransformers.accesswidener"))
     }
 }
 
@@ -29,6 +29,7 @@ dependencies {
     implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.1'
     implementation("com.github.llamalad7.mixinextras:mixinextras-common:0.2.0-rc.3")
     annotationProcessor("com.github.llamalad7.mixinextras:mixinextras-common:0.2.0-rc.3")
+    implementation "fuzs.forgeconfigapiport:forgeconfigapiport-common:${project.forge_config_api_port_version}"
 }
 sourceSets.main.resources.srcDir './src/generated/resources'
 processResources {

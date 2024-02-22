@@ -29,6 +29,7 @@
   },
   "suggests": {
     "another-mod": "*"
-  }
+  },
+  "accessWidener" : "accesstransformers.accesswidener"
 }
   

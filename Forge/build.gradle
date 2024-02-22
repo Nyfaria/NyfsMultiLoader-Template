@@ -22,7 +22,7 @@ minecraft {
 
     runs {
         client {
-            workingDirectory project.file('run')
+            workingDirectory project.file('client')
             jvmArg("-XX:+AllowEnhancedClassRedefinition")
             ideaModule "${rootProject.name}.${project.name}.main"
             taskName 'Client'
@@ -37,7 +37,7 @@ minecraft {
         }
 
         server {
-            workingDirectory project.file('run')
+            workingDirectory project.file('server')
             ideaModule "${rootProject.name}.${project.name}.main"
             taskName 'Server'
             property 'mixin.env.remapRefMap', 'true'
