@@ -1,10 +1,26 @@
 plugins {
     id 'multiloader-loader'
     id 'fabric-loom' version '1.6-SNAPSHOT'
+    id "me.modmuss50.mod-publish-plugin" version "0.5.1"
+    id 'com.matyrobbrt.mc.registrationutils' version "${regutils_version}"
+}
+
+registrationUtils {
+    group "com.nyfaria.${mod_id}.registration"
+    projects {
+//        Fabric {
+//            type 'fabric'
+//            project 'fabric'
+//
+//        } // The fabric project
+    }
 }
 dependencies {
     minecraft "com.mojang:minecraft:${minecraft_version}"
-    mappings loom.officialMojangMappings()
+    mappings loom.layered() {
+        officialMojangMappings()
+        parchment("org.parchmentmc.data:parchment-1.20.6:2024.05.01@zip")
+    }
     modImplementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
 }

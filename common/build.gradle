@@ -1,17 +1,26 @@
 plugins {
     id 'multiloader-common'
-    id 'org.spongepowered.gradle.vanilla' version '0.2.1-SNAPSHOT'
+//    id 'net.neoforged.gradle.userdev' version '7.0.133'
+    id 'net.minecraftforge.gradle' version '[6.0.24,6.2)'
+    id 'org.parchmentmc.librarian.forgegradle' version '1.+'
+    id 'com.matyrobbrt.mc.registrationutils' version "${regutils_version}"
 }
 
+registrationUtils {
+    group "com.nyfaria.${mod_id}.registration"
+
+}
 minecraft {
-    version(minecraft_version)
-    def aw = file("src/main/resources/${mod_id}.accesswidener")
+    mappings channel: mappings_channel, version: mappings_version
+//    version(minecraft_version)
+    def aw = file('src/main/resources/META-INF/accesstransformer.cfg')
     if(aw.exists()){
-        accessWideners(aw)
+        accessTransformer = aw
     }
 }
 
 dependencies {
+    minecraft "net.minecraft:joined:${minecraft_version}"
     compileOnly group:'org.spongepowered', name:'mixin', version:'0.8.5'
 }
 
