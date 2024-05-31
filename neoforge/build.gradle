@@ -5,15 +5,7 @@ plugins {
     id 'com.matyrobbrt.mc.registrationutils' version "${regutils_version}"
 }
 
-registrationUtils {
-    group "com.nyfaria.${mod_id}.registration"
-    projects {
-//        NeoForge {
-//            type 'neoforge'
-//            project 'root'
-//        } // The forge project
-    }
-}
+
 // Automatically enable neoforge AccessTransformers if the file exists
 // This location is hardcoded in FML and can not be changed.
 // https://github.com/neoforged/FancyModLoader/blob/a952595eaaddd571fbc53f43847680b00894e0c1/loader/src/main/java/net/neoforged/fml/loading/moddiscovery/ModFile.java#L118

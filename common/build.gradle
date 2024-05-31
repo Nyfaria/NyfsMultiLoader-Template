@@ -6,10 +6,7 @@ plugins {
     id 'com.matyrobbrt.mc.registrationutils' version "${regutils_version}"
 }
 
-registrationUtils {
-    group "com.nyfaria.${mod_id}.registration"
 
-}
 minecraft {
     mappings channel: mappings_channel, version: mappings_version
 //    version(minecraft_version)
