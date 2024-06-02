@@ -8,8 +8,8 @@ pluginManagement {
             url = 'https://maven.minecraftforge.net/'
         }
         maven {
-            name 'ParchmentMC'
-            url 'https://maven.parchmentmc.org'
+            name = 'ParchmentMC'
+            url = 'https://maven.parchmentmc.org'
         }
         exclusiveContent {
             forRepository {
