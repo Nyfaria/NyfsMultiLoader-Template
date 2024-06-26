@@ -1,5 +1,6 @@
 package com.nyfaria.nyfsmultiloader.datagen;
 
+import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.EntityLootSubProvider;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.flag.FeatureFlags;
@@ -16,8 +17,8 @@ import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import java.util.stream.Stream;
 
 public class ModEntityLootTables extends EntityLootSubProvider {
-    protected ModEntityLootTables() {
-        super(FeatureFlags.REGISTRY.allFlags());
+    protected ModEntityLootTables(HolderLookup.Provider provider) {
+        super(FeatureFlags.REGISTRY.allFlags(), provider);
     }
 
     @Override

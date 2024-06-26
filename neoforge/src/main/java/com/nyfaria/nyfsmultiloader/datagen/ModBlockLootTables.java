@@ -2,7 +2,9 @@ package com.nyfaria.nyfsmultiloader.datagen;
 
 import com.nyfaria.nyfsmultiloader.init.BlockInit;
 import com.nyfaria.nyfsmultiloader.registration.RegistryObject;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.BlockLootSubProvider;
+import net.minecraft.data.loot.LootTableSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -11,15 +13,18 @@ import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 
 import java.util.Set;
+import java.util.function.Function;
 import java.util.stream.Stream;
 
 public class ModBlockLootTables extends BlockLootSubProvider {
-    protected ModBlockLootTables() {
-        super(Set.of(), FeatureFlags.REGISTRY.allFlags());
+    protected ModBlockLootTables(HolderLookup.Provider provider) {
+        super(Set.of(), FeatureFlags.REGISTRY.allFlags(), provider);
     }
+
 
     @Override
     protected void generate() {
