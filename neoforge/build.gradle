@@ -1,8 +1,8 @@
 plugins {
     id 'multiloader-loader'
-    id 'net.neoforged.moddev' version '0.1.114'
-    id "me.modmuss50.mod-publish-plugin" version "0.5.1"
-    id 'com.matyrobbrt.mc.registrationutils' version "${regutils_version}"
+    id 'net.neoforged.moddev'
+    id "me.modmuss50.mod-publish-plugin"
+    id 'com.matyrobbrt.mc.registrationutils'
 }
 
 

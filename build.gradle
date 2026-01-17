@@ -2,7 +2,9 @@ plugins {
     // Required for NeoGradle
     id "org.jetbrains.gradle.plugin.idea-ext" version "1.1.7"
     id 'com.matyrobbrt.mc.registrationutils' version "${regutils_version}"
-    // The plugin is located at the Gradle plugin portal
+    id "me.modmuss50.mod-publish-plugin" version "1.1.0" apply false
+    id 'net.neoforged.moddev' version '2.0.139' apply false
+    id 'fabric-loom' version '1.13-SNAPSHOT' apply false
 }
 registrationUtils {
     group "com.nyfaria.${mod_id}.registration"
