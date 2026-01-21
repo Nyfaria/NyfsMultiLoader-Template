@@ -1,0 +1,89 @@
+plugins {
+    id 'multiloader-loader'
+    alias(libs.plugins.mdg.forge)
+    alias(libs.plugins.mod.publish)
+    alias(libs.plugins.regutils.loader)
+    alias(libs.plugins.hundred.media)
+}
+
+
+mixin {
+    add(sourceSets.main, "${mod_id}.refmap.json")
+
+    config("${mod_id}.mixins.json")
+}
+
+legacyForge {
+    version = libs.versions.common.minecraft.get()
+    def at = project(":common").file('src/main/resources/META-INF/accesstransformer.cfg')
+    if (at.exists()) {
+        accessTransformers = [at]
+    }
+    parchment {
+        minecraftVersion = libs.versions.parchment.minecraft.get()
+        mappingsVersion = libs.versions.parchment.version.get()
+    }
+
+    mods {
+        "${mod_id}" {
+            sourceSet sourceSets.main
+        }
+    }
+
+    runs {
+        configureEach {
+            jvmArguments =['-XX:+AllowEnhancedClassRedefinition']
+
+        }
+        client {
+            client()
+        }
+        server {
+            server()
+        }
+        data {
+            data()
+            programArguments.addAll '--mod', project.mod_id, '--all', '--output', rootProject.project(":common").file('src/generated/resources/').getAbsolutePath(), '--existing', rootProject.project(":common").file('src/main/resources/').getAbsolutePath()
+        }
+    }
+}
+sourceSets.main.resources { srcDir project(":common").file('src/generated/resources').getAbsolutePath() }
+
+
+dependencies {
+    compileOnly(project(":common"))
+    annotationProcessor("org.spongepowered:mixin:${libs.versions.mixin.get()}:processor")
+    modImplementation libs.cap.syncer
+    jarJar(libs.cap.syncer)
+}
+jar {
+    finalizedBy('reobfJar')
+    manifest.attributes([
+            "MixinConfigs": "${mod_id}.mixins.json"
+    ])
+}
+publishMods {
+    file = jar.archiveFile
+    changelog = project(":common").file("changelog.md").text
+    type = STABLE
+    modLoaders.add("forge")
+    displayName = "${mod_name}-${minecraft_version}-[Forge]-${project.version}"
+    dryRun = dry_run.toBoolean()
+    if (curseforge_publishing_enabled.toBoolean()) {
+        curseforge {
+            projectId = curseforge_project_id
+            accessToken = curseforge_token
+            minecraftVersions.add(minecraft_version)
+            clientRequired = true
+            serverRequired = true
+            javaVersions.add(JavaVersion.VERSION_17)
+        }
+    }
+    if (modrinth_publishing_enabled.toBoolean()) {
+        modrinth {
+            accessToken = modrinth_token
+            projectId = modrinth_project_id
+            minecraftVersions.add(minecraft_version)
+        }
+    }
+}
