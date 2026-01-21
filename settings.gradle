@@ -28,7 +28,7 @@ pluginManagement {
         exclusiveContent {
             forRepository {
                 maven {
-                    name = 'NeoForge'
+                    name = 'forge'
                     url = uri("https://maven.neoforged.net/releases")
                 }
             }
