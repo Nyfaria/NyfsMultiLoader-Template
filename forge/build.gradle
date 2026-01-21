@@ -6,6 +6,9 @@ plugins {
     alias(libs.plugins.hundred.media)
 }
 
+configurations.all {
+    resolutionStrategy.cacheDynamicVersionsFor(1, "seconds")
+}
 
 mixin {
     add(sourceSets.main, "${mod_id}.refmap.json")
@@ -52,7 +55,7 @@ sourceSets.main.resources { srcDir project(":common").file('src/generated/resour
 
 dependencies {
     compileOnly(project(":common"))
-    annotationProcessor("org.spongepowered:mixin:${libs.versions.mixin.get()}:processor")
+    annotationProcessor("org.spongepowered:mixin:${libs.versions.mixin}:processor")
     modImplementation libs.cap.syncer
     jarJar(libs.cap.syncer)
 }

@@ -5,6 +5,9 @@ plugins {
     alias(libs.plugins.regutils.loader)
 }
 
+configurations.all {
+    resolutionStrategy.cacheDynamicVersionsFor(1, "seconds")
+}
 
 sourceSets.main.resources { srcDir project(":common").file('src/generated/resources').getAbsolutePath() }
 
@@ -14,8 +17,8 @@ dependencies {
         officialMojangMappings()
         parchment("org.parchmentmc.data:parchment-${libs.versions.parchment.minecraft.get()}:${libs.versions.parchment.version.get()}@zip")
     }
-    modImplementation "net.fabricmc:fabric-loader:${libs.versions.fabric.loader.get()}"
-    modImplementation "net.fabricmc.fabric-api:fabric-api:${libs.versions.fabric.api.get()}"
+    modImplementation libs.fabric.loader
+    modImplementation libs.fabric.api
     modApi(libs.fabric.config.api)
     include(libs.fabric.config.api)
     modImplementation(libs.bundles.cc.all)

@@ -2,3 +2,6 @@ plugins {
     id 'groovy-gradle-plugin'
 }
 
+configurations.all {
+    resolutionStrategy.cacheDynamicVersionsFor(1, "seconds")
+}
