@@ -55,7 +55,11 @@ sourceSets.main.resources { srcDir project(":common").file('src/generated/resour
 
 dependencies {
     compileOnly(project(":common"))
-    annotationProcessor("org.spongepowered:mixin:${libs.versions.mixin}:processor")
+    annotationProcessor(libs.mixin) {
+        artifact {
+            classifier = 'processor'
+        }
+    }
     modImplementation libs.cap.syncer
     jarJar(libs.cap.syncer)
 }
