@@ -10,7 +10,6 @@ dependencyResolutionManagement {
         }
     }
     repositories {
-        mavenLocal()
         mavenCentral()
         maven {
             name = 'Fabric'
@@ -23,6 +22,10 @@ dependencyResolutionManagement {
         maven {
             name = 'Forge'
             url = 'https://maven.minecraftforge.net/'
+        }
+        maven {
+            name "100mediaReleases"
+            url "https://maven.100media.dev/releases"
         }
     }
 }
