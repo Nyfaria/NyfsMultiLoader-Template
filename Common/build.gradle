@@ -1,7 +1,7 @@
 plugins {
     id 'multiloader-common'
-    alias(libs.plugins.mdg.forge)
-    alias(libs.plugins.regutils.loader)
+    alias(nyfs.plugins.mdg)
+    alias(nyfs.plugins.regutils.vanilla)
 }
 configurations.all {
     resolutionStrategy.cacheDynamicVersionsFor(1, "seconds")
@@ -14,17 +14,15 @@ legacyForge {
         accessTransformers = [at]
     }
     parchment {
-        minecraftVersion = libs.versions.parchment.minecraft.get()
-        mappingsVersion = libs.versions.parchment.version.get()
+        minecraftVersion = nyfs.versions.parchmentMinecraft.get()
+        mappingsVersion = nyfs.versions.parchmentVersion.get()
     }
 }
-repositories {
-    maven { url "https://maven.fabricmc.net/" }
-}
+
 dependencies {
-    compileOnly(libs.bundles.mixin.common)
-    annotationProcessor libs.mixin.extras
-    compileOnly libs.common.config.api
+    compileOnly(nyfs.bundles.mixin.common)
+    annotationProcessor nyfs.mixin.extras.common
+    compileOnly nyfs.config.api.common
 }
 
 configurations {

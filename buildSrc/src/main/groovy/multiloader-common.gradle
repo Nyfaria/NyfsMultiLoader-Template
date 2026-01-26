@@ -14,8 +14,6 @@ java {
 }
 
 repositories {
-    mavenCentral()
-    // https://docs.gradle.org/current/userguide/declaring_repositories.html#declaring_content_exclusively_found_in_one_repository
     exclusiveContent {
         forRepository {
             maven {
@@ -24,33 +22,13 @@ repositories {
             }
         }
         filter { includeGroupAndSubgroups("org.spongepowered") }
-
-    }
-    maven {
-        name = 'BlameJared'
-        url = 'https://maven.blamejared.com'
     }
     maven {
         name = "Fuzs Mod Resources"
         url = "https://raw.githubusercontent.com/Fuzss/modresources/main/maven/"
     }
-    maven {
-        name = 'ParchmentMC'
-        url = 'https://maven.parchmentmc.org'
-    }
-
-    maven {
-        name "100mediaReleases"
-        url "https://maven.100media.dev/releases"
-    }
-    maven {
-        name = 'Ladysnake Mods'
-        url = 'https://maven.ladysnake.org/releases'
-    }
 }
 
-// Declare capabilities on the outgoing configurations.
-// Read more about capabilities here: https://docs.gradle.org/current/userguide/component_capabilities.html#sec:declaring-additional-capabilities-for-a-local-component
 ['apiElements', 'runtimeElements', 'sourcesElements', 'javadocElements'].each { variant ->
     configurations."$variant".outgoing {
         capability("$group:${base.archivesName.get()}:$version")
@@ -89,18 +67,18 @@ jar {
 processResources {
     def expandProps = [
             "version"                      : version,
-            "group"                        : project.group, //Else we target the task's group.
+            "group"                        : project.group,
             "minecraft_version"            : minecraft_version,
             "minecraft_version_range"      : minecraft_version_range,
-            "fabric_version"               : libs.versions.fabric.api.get(),
-            "fabric_loader_version"        : libs.versions.fabric.loader.get(),
+            "fabric_version"               : nyfs.versions.fabric.api.get(),
+            "fabric_loader_version"        : nyfs.versions.fabric.loader.get(),
             "mod_name"                     : mod_name,
             "mod_author"                   : mod_author,
             "mod_id"                       : mod_id,
             "license"                      : license,
             "description"                  : project.description,
-            "forge_version"                : libs.versions.forge.version.main.get(),
-            "forge_loader_version_range"   : libs.versions.forge.loader.range.get(),
+            "forge_version"                : nyfs.versions.forgeVersion.get(),
+            "forge_loader_version_range"   : nyfs.versions.forgeLoaderRange.get(),
             "credits"                      : credits,
             "java_version"                 : java_version
     ]

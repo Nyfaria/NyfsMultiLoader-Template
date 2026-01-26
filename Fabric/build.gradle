@@ -1,8 +1,8 @@
 plugins {
     id 'multiloader-loader'
-    alias(libs.plugins.loom.fabric)
-    alias(libs.plugins.mod.publish)
-    alias(libs.plugins.regutils.loader)
+    alias(nyfs.plugins.loom)
+    alias(nyfs.plugins.mod.publish)
+    alias(nyfs.plugins.regutils)
 }
 
 configurations.all {
@@ -15,14 +15,14 @@ dependencies {
     minecraft "com.mojang:minecraft:${minecraft_version}"
     mappings loom.layered() {
         officialMojangMappings()
-        parchment("org.parchmentmc.data:parchment-${libs.versions.parchment.minecraft.get()}:${libs.versions.parchment.version.get()}@zip")
+        parchment("org.parchmentmc.data:parchment-${nyfs.versions.parchmentMinecraft.get()}:${nyfs.versions.parchmentVersion.get()}@zip")
     }
-    modImplementation libs.fabric.loader
-    modImplementation libs.fabric.api
-    modApi(libs.fabric.config.api)
-    include(libs.fabric.config.api)
-    modImplementation(libs.bundles.cc.all)
-    include(libs.bundles.cc.all)
+    modImplementation nyfs.fabric.loader
+    modImplementation nyfs.fabric.api
+    modApi(nyfs.config.api.fabric)
+    include(nyfs.config.api.fabric)
+    modImplementation(nyfs.bundles.cc.all)
+    include(nyfs.bundles.cc.all)
 }
 
 loom {

@@ -1,9 +1,9 @@
 plugins {
     id 'multiloader-loader'
-    alias(libs.plugins.mdg.forge)
-    alias(libs.plugins.mod.publish)
-    alias(libs.plugins.regutils.loader)
-    alias(libs.plugins.hundred.media)
+    alias(nyfs.plugins.mdg)
+    alias(nyfs.plugins.mod.publish)
+    alias(nyfs.plugins.regutils)
+    alias(nyfs.plugins.hundred.media)
 }
 
 configurations.all {
@@ -17,14 +17,14 @@ mixin {
 }
 
 legacyForge {
-    version = libs.versions.common.minecraft.get()
+    version = nyfs.versions.minecraft.get() + "-" + nyfs.versions.forgeVersion.get()
     def at = project(":common").file('src/main/resources/META-INF/accesstransformer.cfg')
     if (at.exists()) {
         accessTransformers = [at]
     }
     parchment {
-        minecraftVersion = libs.versions.parchment.minecraft.get()
-        mappingsVersion = libs.versions.parchment.version.get()
+        minecraftVersion = nyfs.versions.parchmentMinecraft.get()
+        mappingsVersion = nyfs.versions.parchmentVersion.get()
     }
 
     mods {
@@ -55,13 +55,13 @@ sourceSets.main.resources { srcDir project(":common").file('src/generated/resour
 
 dependencies {
     compileOnly(project(":common"))
-    annotationProcessor(libs.mixin) {
+    annotationProcessor(nyfs.mixin) {
         artifact {
             classifier = 'processor'
         }
     }
-    modImplementation libs.cap.syncer
-    jarJar(libs.cap.syncer)
+    modImplementation nyfs.cap.syncer
+    jarJar(nyfs.cap.syncer)
 }
 jar {
     finalizedBy('reobfJar')
