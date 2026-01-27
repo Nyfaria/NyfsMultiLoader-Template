@@ -1,6 +1,101 @@
-# MultiLoader Template
+# Nyf's MultiLoader Template
 
-This project provides a Gradle project template that can compile mods for multiple modloaders using a common sourceset. This project does not require any third party libraries or dependencies. If you have any questions or want to discuss the project join our [Discord](https://discord.myceliummod.network).
+This project provides a Gradle project template that can compile mods for multiple modloaders using a common sourceset. This project does not require any third party libraries or dependencies. If you have any questions or want to discuss the project join the [Discord](https://discord.gg/vgQKt3HKnH).
+
+## NyfsModdingTools Plugin
+
+This template uses the **NyfsModdingTools** Gradle plugin which provides:
+
+- **Version Catalog** - Pre-configured dependencies for popular modding libraries
+- **Auto Package Sync** - Automatically refactors package names when you change `group` or `mod_id` in `gradle.properties`
+- **Constants Sync** - Updates the `MODID` constant in your `Constants` class when `mod_id` changes
+- **Entrypoint Sync** - Updates `fabric.mod.json` entrypoints when your initializer classes change
+
+### Supported Minecraft Versions
+
+| Version | Loaders |
+|---------|---------|
+| 1.20.1  | Fabric, Forge |
+| 1.21.1  | Fabric, NeoForge |
+| 1.21.3+ | Fabric, NeoForge |
+
+### Natively Supported Libraries
+
+The following libraries are available through the version catalog with pre-configured versions for each Minecraft version:
+
+| Library | Description | Lib String | Versions |
+|---------|-------------|------------|----------|
+| **GeckoLib** | Animation library for entities and items | `nyfs.geckolib.common`<br>`nyfs.geckolib.fabric`<br>`nyfs.geckolib.neoforge` | 1.20.1, 1.21.1, 1.21.3+ |
+| **SmartBrainLib** | AI/Brain system utilities | `nyfs.sbl.common`<br>`nyfs.sbl.fabric`<br>`nyfs.sbl.neoforge` | 1.20.1, 1.21.1, 1.21.3+ |
+| **CommonNetwork** | Cross-loader networking library | `nyfs.commonnetwork.common`<br>`nyfs.commonnetwork.fabric`<br>`nyfs.commonnetwork.neoforge` | 1.20.1, 1.21.1, 1.21.3+ |
+| **Forge Config API Port** | Config API for Fabric/NeoForge | `nyfs.config.api.common`<br>`nyfs.config.api.fabric` | 1.20.1, 1.21.1, 1.21.3+ |
+| **MixinExtras** | Extended Mixin functionality | `nyfs.mixin.extras.common`<br>`nyfs.mixin.extras.fabric`<br>`nyfs.mixin.extras.neoforge` | All versions |
+| **Fabric API** | Fabric modding API | `nyfs.fabric.api` | All Fabric versions |
+| **Cardinal Components** | Component/capability system for Fabric | `nyfs.cc.base`<br>`nyfs.cc.entity` | 1.20.1 |
+| **Capability Syncer** | Capability sync utilities | `nyfs.cap.syncer` | 1.20.1 |
+
+### Using Libraries
+
+In your `build.gradle` files, reference libraries using the version catalog:
+
+```groovy
+dependencies {
+    implementation nyfs.geckolib.common
+    implementation nyfs.sbl.common
+    implementation nyfs.commonnetwork.common
+}
+```
+
+For loader-specific modules:
+
+```groovy
+dependencies {
+    implementation nyfs.geckolib.fabric
+    implementation nyfs.geckolib.neoforge
+}
+```
+
+### Mod Dependencies
+
+The plugin provides a `modDeps` extension for managing mod dependencies with automatic metadata file modification. Use this in your loader-specific `build.gradle` files:
+
+#### Required Mods
+Mods that must be installed for your mod to work:
+
+```groovy
+modDeps.requiredMod(nyfs.geckolib.fabric)
+modDeps.requiredMod("geckolib", "4.8.3", nyfs.geckolib.fabric)
+```
+
+- Adds to `modImplementation` (Fabric) or `implementation` (NeoForge)
+- Adds to `depends` in `fabric.mod.json`
+- Adds `type="required"` in `neoforge.mods.toml`
+
+#### Optional Mods
+Mods that add extra features but aren't required:
+
+```groovy
+modDeps.optionalMod(nyfs.geckolib.fabric)
+modDeps.optionalMod("geckolib", "4.8.3", nyfs.geckolib.fabric)
+```
+
+- Adds to `modCompileOnly` (Fabric) or `compileOnly` (NeoForge)
+- Adds to `suggests` in `fabric.mod.json`
+- Adds `type="optional"` in `neoforge.mods.toml`
+
+#### Embedded Mods
+Mods that are bundled inside your mod's jar:
+
+```groovy
+modDeps.embeddedMod(nyfs.geckolib.fabric)
+modDeps.embeddedMod("geckolib", "4.8.3", nyfs.geckolib.fabric)
+```
+
+- Adds to `include` + `modImplementation` (Fabric) or `jarJar` + `implementation` (NeoForge)
+- Adds to `depends` in `fabric.mod.json`
+- Adds `type="required"` in `neoforge.mods.toml`
+
+The plugin automatically modifies `fabric.mod.json` and `neoforge.mods.toml` in the output jar (not source files).
 
 ## Getting Started
 
@@ -15,8 +110,18 @@ This guide will show how to import the MultiLoader Template into IntelliJ IDEA. 
 6. Open your Run/Debug Configurations. Under the Application category there should now be options to run NeoForge and Fabric projects. Select one of the client options and try to run it.
 7. Assuming you were able to run the game in step 7 your workspace should now be set up.
 
-### Eclipse
-While it is possible to use this template in Eclipse it is not recommended. During the development of this template multiple critical bugs and quirks related to Eclipse were found at nearly every level of the required build tools. While we continue to work with these tools to report and resolve issues support for projects like these are not there yet. For now Eclipse is considered unsupported by this project. The development cycle for build tools is notoriously slow so there are no ETAs available.
+### Auto Package Sync
+
+When you change the `group` or `mod_id` in `gradle.properties`, the plugin will automatically:
+
+1. Rename all package declarations and imports
+2. Move source files to the new package directory
+3. Update mixin configuration files
+4. Update `fabric.mod.json` and `neoforge.mods.toml`
+5. Update the `MODID`/`MOD_ID` constant in your `Constants` class
+6. Update entrypoints in `fabric.mod.json` based on detected initializer classes
+
+Simply refresh your Gradle project after changing the properties.
 
 ## Development Guide
 When using this template the majority of your mod is developed in the Common project. The Common project is compiled against the vanilla game and is used to hold code that is shared between the different loader-specific versions of your mod. The Common project has no knowledge or access to ModLoader specific code, apis, or concepts. Code that requires something from a specific loader must be done through the project that is specific to that loader, such as the NeoForge or Fabric project.
@@ -27,4 +132,4 @@ Loader specific projects such as the NeoForge and Fabric project are used to loa
 While the MultiLoader Template includes support for many platforms and loaders you can easily remove support for the ones you don't need. This can be done by deleting the subproject folder and then removing it from the `settings.gradle` file. For example if you wanted to remove support for Forge you would follow the following steps. 
 
 1. Delete the subproject folder. For example, delete `MultiLoader-Template/forge`.
-2. Remove the project from `settings.gradle`. For example, remove `include("forge")`. 
+2. Remove the project from `settings.gradle`. For example, remove `include("forge")`.
