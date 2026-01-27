@@ -16,7 +16,7 @@
     "environment": "*",
     "entrypoints": {
         "main": [
-          "com.nyfaria.nyfsmultiloadertest.ExampleMod"
+            "com.nyfaria.nyfsmultiloader.ExampleMod"
         ]
     },
     "mixins": [
