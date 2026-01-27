@@ -1,17 +1,12 @@
 plugins {
     id 'multiloader-loader'
-    id 'net.neoforged.moddev'
-    id "me.modmuss50.mod-publish-plugin"
-    id 'com.matyrobbrt.mc.registrationutils'
+    alias(nyfs.plugins.mdg.loader)
+    alias(nyfs.plugins.mod.publish)
+    alias(nyfs.plugins.regutils.loader)
 }
 
-
-// Automatically enable neoforge AccessTransformers if the file exists
-// This location is hardcoded in FML and can not be changed.
-// https://github.com/neoforged/FancyModLoader/blob/a952595eaaddd571fbc53f43847680b00894e0c1/loader/src/main/java/net/neoforged/fml/loading/moddiscovery/ModFile.java#L118
-
 neoForge {
-    version = "${neoforge_version}"
+    version = nyfs.versions.neoforgeVersion.get()
     def at = project(":common").file('src/main/resources/META-INF/accesstransformer.cfg')
     if (at.exists()) {
         minecraft.accessTransformers.file at

@@ -1,28 +1,25 @@
 plugins {
     id 'multiloader-common'
-    id 'net.neoforged.moddev'
-    id 'com.matyrobbrt.mc.registrationutils'
+    alias(nyfs.plugins.mdg.loader)
+    alias(nyfs.plugins.regutils.loader)
 }
 
-
 neoForge {
-    // Look for versions on https://projects.neoforged.net/neoforged/neoform
-    neoFormVersion = neo_form_version
+    neoFormVersion = nyfs.versions.neoFormVersion.get()
     def at = file('src/main/resources/META-INF/accesstransformer.cfg')
     if (at.exists()) {
         accessTransformers.from(at.absolutePath)
     }
     parchment {
-        minecraftVersion = parchment_minecraft
-        mappingsVersion = parchment_version
+        minecraftVersion = nyfs.versions.parchmentMinecraft.get()
+        mappingsVersion = nyfs.versions.parchmentVersion.get()
     }
 }
 
 dependencies {
-    compileOnly group: 'org.spongepowered', name: 'mixin', version: '0.8.5'
-    compileOnly group: 'io.github.llamalad7', name: 'mixinextras-common', version: '0.3.5'
-    annotationProcessor group: 'io.github.llamalad7', name: 'mixinextras-common', version: '0.3.5'
-    compileOnly "fuzs.forgeconfigapiport:forgeconfigapiport-common-neoforgeapi:${project.forge_config_api_port_version}"
+    compileOnly(nyfs.bundles.mixin.common)
+    annotationProcessor nyfs.mixin.extras.common
+    compileOnly nyfs.config.api.common
 }
 
 configurations {

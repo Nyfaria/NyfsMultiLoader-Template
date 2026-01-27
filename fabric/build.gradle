@@ -1,22 +1,23 @@
 plugins {
     id 'multiloader-loader'
-    id 'fabric-loom'
-    id "me.modmuss50.mod-publish-plugin"
-    id 'com.matyrobbrt.mc.registrationutils'
+    alias(nyfs.plugins.loom.loader)
+    alias(nyfs.plugins.mod.publish)
+    alias(nyfs.plugins.regutils.loader)
+    id("com.nyfaria.moddingtools.dependencies")
 }
-
-
 
 dependencies {
     minecraft "com.mojang:minecraft:${minecraft_version}"
     mappings loom.layered() {
         officialMojangMappings()
-//        parchment("org.parchmentmc.data:parchment-1.20.6:2024.05.01@zip")
+        parchment("org.parchmentmc.data:parchment-${nyfs.versions.parchmentMinecraft.get()}:${nyfs.versions.parchmentVersion.get()}@zip")
     }
-    modImplementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
-    modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
-    modApi "fuzs.forgeconfigapiport:forgeconfigapiport-fabric:${project.forge_config_api_port_version}"
-    include "fuzs.forgeconfigapiport:forgeconfigapiport-fabric:${project.forge_config_api_port_version}"
+    modImplementation nyfs.fabric.loader
+    modImplementation nyfs.fabric.api
+//    modApi nyfs.config.api.fabric
+//    include nyfs.config.api.fabric
+
+    modDeps.requiredMod(nyfs.config.api.fabric)
 }
 
 loom {
