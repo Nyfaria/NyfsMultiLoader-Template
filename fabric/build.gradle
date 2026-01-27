@@ -14,10 +14,6 @@ dependencies {
     }
     modImplementation nyfs.fabric.loader
     modImplementation nyfs.fabric.api
-//    modApi nyfs.config.api.fabric
-//    include nyfs.config.api.fabric
-
-    modDeps.requiredMod(nyfs.config.api.fabric)
 }
 
 loom {
