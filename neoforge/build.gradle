@@ -51,7 +51,7 @@ publishMods {
             minecraftVersions.add(minecraft_version)
             clientRequired = true
             serverRequired = true
-            javaVersions.add(JavaVersion.VERSION_17)
+            javaVersions.add(JavaVersion.VERSION_21)
             announcementTitle = "Download NeoForge Version from CurseForge"
             projectSlug = "nyfs-spiders"
         }
