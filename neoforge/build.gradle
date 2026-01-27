@@ -9,7 +9,7 @@ neoForge {
     version = nyfs.versions.neoforgeVersion.get()
     def at = project(":common").file('src/main/resources/META-INF/accesstransformer.cfg')
     if (at.exists()) {
-        minecraft.accessTransformers.file at
+        accessTransformers = [at]
     }
     mods {
         "${mod_id}" {
