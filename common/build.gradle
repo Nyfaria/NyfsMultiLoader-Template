@@ -17,9 +17,9 @@ neoForge {
 }
 
 dependencies {
-    compileOnly(nyfs.bundles.mixin.common)
-    annotationProcessor nyfs.mixin.extras.common
-    compileOnly nyfs.config.api.common
+    compileOnly(nyfs.bundles.mixin.common.get())
+    annotationProcessor nyfs.mixin.extras.common.get()
+    compileOnly nyfs.config.api.common.get()
 }
 
 configurations {
