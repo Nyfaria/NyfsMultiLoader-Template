@@ -65,6 +65,8 @@ jar {
 }
 
 processResources {
+    def legacy = nyfs.versions.era.get() == "legacy"
+
     def expandProps = [
             "version"                      : version,
             "group"                        : project.group,
@@ -77,11 +79,17 @@ processResources {
             "mod_id"                       : mod_id,
             "license"                      : license,
             "description"                  : project.description,
-            "neoforge_version"             : nyfs.versions.neoforgeVersion.get(),
-            "neoforge_loader_version_range": nyfs.versions.neoforgeLoaderRange.get(),
             "credits"                      : credits,
             "java_version"                 : java_version
     ]
+
+    if (legacy) {
+        expandProps["forge_version"] = nyfs.versions.forgeVersion.get()
+        expandProps["forge_loader_version_range"] = nyfs.versions.forgeLoaderRange.get()
+    } else {
+        expandProps["neoforge_version"] = nyfs.versions.neoforgeVersion.get()
+        expandProps["neoforge_loader_version_range"] = nyfs.versions.neoforgeLoaderRange.get()
+    }
 
     filesMatching(['pack.mcmeta', 'fabric.mod.json', 'META-INF/mods.toml', 'META-INF/neoforge.mods.toml', '*.mixins.json']) {
         expand expandProps

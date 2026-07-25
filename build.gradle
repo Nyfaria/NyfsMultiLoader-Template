@@ -5,6 +5,8 @@ plugins {
     alias(nyfs.plugins.regutils)
 }
 
+def legacy = nyfs.versions.era.get() == "legacy"
+
 registrationUtils {
     group "com.nyfaria.${mod_id}.registration"
     projects {
@@ -12,7 +14,7 @@ registrationUtils {
             type 'fabric'
         }
         neoforge {
-            type 'neoforge'
+            type legacy ? 'forge' : 'neoforge'
         }
         common {
             type 'common'
