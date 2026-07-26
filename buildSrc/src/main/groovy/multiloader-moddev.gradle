@@ -38,10 +38,6 @@ if (legacy) {
             server {
                 server()
             }
-            data {
-                data()
-                programArguments.addAll '--mod', project.mod_id, '--all', '--output', rootProject.project(":common").file('src/generated/resources/').getAbsolutePath(), '--existing', rootProject.project(":common").file('src/main/resources/').getAbsolutePath()
-            }
         }
     }
 
@@ -79,10 +75,6 @@ if (legacy) {
                 server()
                 systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
                 programArgument '--nogui'
-            }
-            data {
-                data()
-                programArguments.addAll '--mod', project.mod_id, '--all', '--output', rootProject.project(":common").file('src/generated/resources/').getAbsolutePath(), '--existing', rootProject.project(":common").file('src/main/resources/').getAbsolutePath()
             }
         }
     }

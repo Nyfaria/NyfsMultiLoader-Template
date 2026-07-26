@@ -16,6 +16,9 @@ registrationUtils {
         neoforge {
             type legacy ? 'forge' : 'neoforge'
         }
+        datagen {
+            type legacy ? 'forge' : 'neoforge'
+        }
         common {
             type 'common'
         }
