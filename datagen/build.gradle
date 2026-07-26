@@ -9,6 +9,7 @@ java {
 }
 
 def legacy = nyfs.versions.era.get() == "legacy"
+def deobf = nyfs.versions.era.get() == "deobf"
 def accessTransformer = project(":common").file('src/main/resources/META-INF/accesstransformer.cfg')
 def dataArguments = ['--mod', project.mod_id, '--all', '--output', rootProject.project(":common").file('src/generated/resources/').getAbsolutePath(), '--existing', rootProject.project(":common").file('src/main/resources/').getAbsolutePath()]
 
@@ -48,9 +49,20 @@ if (legacy) {
             }
         }
         runs {
-            data {
-                data()
-                programArguments.addAll dataArguments
+            if (deobf) {
+                clientData {
+                    clientData()
+                    programArguments.addAll dataArguments
+                }
+                serverData {
+                    serverData()
+                    programArguments.addAll dataArguments
+                }
+            } else {
+                data {
+                    data()
+                    programArguments.addAll dataArguments
+                }
             }
         }
     }
