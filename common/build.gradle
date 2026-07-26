@@ -2,20 +2,7 @@ plugins {
     id 'multiloader-common'
     alias(nyfs.plugins.mdg.loader)
     alias(nyfs.plugins.regutils.loader)
-}
-
-neoForge {
-    neoFormVersion = nyfs.versions.neoFormVersion.get()
-    def at = file('src/main/resources/META-INF/accesstransformer.cfg')
-    if (at.exists()) {
-        accessTransformers.from(at.absolutePath)
-    }
-    if (nyfs.versions.era.get() != "deobf") {
-        parchment {
-            minecraftVersion = nyfs.versions.parchmentMinecraft.get()
-            mappingsVersion = nyfs.versions.parchmentVersion.get()
-        }
-    }
+    id 'multiloader-vanilla'
 }
 
 dependencies {
@@ -23,20 +10,3 @@ dependencies {
     annotationProcessor nyfs.mixin.extras.common.get()
     compileOnly nyfs.config.api.common.get()
 }
-
-configurations {
-    commonJava {
-        canBeResolved = false
-        canBeConsumed = true
-    }
-    commonResources {
-        canBeResolved = false
-        canBeConsumed = true
-    }
-}
-
-artifacts {
-    commonJava sourceSets.main.java.sourceDirectories.singleFile
-    commonResources sourceSets.main.resources.sourceDirectories.singleFile
-}
-
