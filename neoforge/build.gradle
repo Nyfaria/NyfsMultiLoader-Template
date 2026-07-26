@@ -1,41 +1,7 @@
 plugins {
     id 'multiloader-loader'
     alias(nyfs.plugins.mdg.loader)
-    alias(nyfs.plugins.mod.publish)
     alias(nyfs.plugins.regutils.loader)
     id 'multiloader-moddev'
-}
-
-publishMods {
-    file = jar.archiveFile
-    changelog = project(":common").file("changelog.md").text
-    type = STABLE
-    modLoaders.add(loaderPlatform)
-    displayName = "${mod_name}-${minecraft_version}-[${loaderLabel}]-${project.version}"
-    dryRun = dry_run.toBoolean()
-    if (curseforge_publishing_enabled.toBoolean()) {
-        curseforge {
-            projectId = curseforge_project_id
-            accessToken = curseforge_token
-            minecraftVersions.add(minecraft_version)
-            clientRequired = true
-            serverRequired = true
-            javaVersions.add(JavaVersion.toVersion(java_version))
-            announcementTitle = "Download ${loaderLabel} Version from CurseForge"
-            projectSlug = "nyfs-spiders"
-        }
-    }
-    if (modrinth_publishing_enabled.toBoolean()) {
-        modrinth {
-            accessToken = modrinth_token
-            projectId = modrinth_project_id
-            minecraftVersions.add(minecraft_version)
-        }
-    }
-    discord {
-        webhookUrl = spider_news
-        username = "Spider News"
-        avatarUrl = "https://media.forgecdn.net/avatars/618/872/638005062440412823.png"
-        content = changelog.map { "# Nyf's Spiders ${project.version} has been released for Minecraft ${minecraft_version}! \n (Pending Approval of Course)\n" + it}
-    }
+    id 'com.nyfaria.moddingtools.publishing'
 }
