@@ -1,6 +1,7 @@
 package com.nyfaria.nyfsmultiloader.init;
 
 import com.nyfaria.nyfsmultiloader.Constants;
+import com.nyfaria.nyfsmultiloader.registration.Init;
 import com.nyfaria.nyfsmultiloader.registration.RegistrationProvider;
 import com.nyfaria.nyfsmultiloader.registration.RegistryObject;
 import net.minecraft.core.registries.Registries;
@@ -10,6 +11,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Blocks;
 
+@Init
 public class ItemInit {
     public static final RegistrationProvider<Item> ITEMS = RegistrationProvider.get(Registries.ITEM, Constants.MODID);
 
@@ -25,9 +27,6 @@ public class ItemInit {
 
     public static Item.Properties getItemProperties() {
         return new Item.Properties();
-    }
-
-    public static void loadClass() {
     }
 
 }

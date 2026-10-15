@@ -1,6 +1,5 @@
 plugins {
     id 'java'
     alias(nyfs.plugins.mdg.loader)
-    alias(nyfs.plugins.regutils.loader)
     id 'multiloader-datagen'
 }

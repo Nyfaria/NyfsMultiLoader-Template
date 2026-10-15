@@ -1,9 +1,11 @@
 package com.nyfaria.nyfsmultiloader.init;
 
 import com.nyfaria.nyfsmultiloader.Constants;
+import com.nyfaria.nyfsmultiloader.registration.Init;
 import com.nyfaria.nyfsmultiloader.registration.RegistrationProvider;
 import com.nyfaria.nyfsmultiloader.registration.RegistryObject;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -13,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Supplier;
 
+@Init
 public class EntityInit {
     public static final RegistrationProvider<EntityType<?>> ENTITIES = RegistrationProvider.get(Registries.ENTITY_TYPE, Constants.MODID);
     public static final List<AttributesRegister<?>> attributeSuppliers = new ArrayList<>();
@@ -20,7 +23,7 @@ public class EntityInit {
 
 
     protected static <T extends Entity> RegistryObject<EntityType<?>,EntityType<T>> registerEntity(String name, Supplier<EntityType.Builder<T>> supplier) {
-        return ENTITIES.register(name, () -> supplier.get().build(Constants.MODID + ":" + name));
+        return ENTITIES.register(name, () -> supplier.get().build(ResourceKey.create(Registries.ENTITY_TYPE, Constants.modLoc(name))));
     }
 
     protected static <T extends LivingEntity> RegistryObject<EntityType<?>,EntityType<T>> registerLivingEntity(String name, Supplier<EntityType.Builder<T>> supplier,
@@ -41,9 +44,6 @@ public class EntityInit {
                                                                                                   int primaryColor, int secondaryColor) {
         RegistryObject<EntityType<?>,EntityType<T>> entityTypeSupplier = registerLivingEntity(name, supplier, attributeSupplier);
         return entityTypeSupplier;
-    }
-
-    public static void loadClass() {
     }
 
 
